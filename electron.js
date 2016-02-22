@@ -2,12 +2,14 @@
 'use strict';
 
 const electron         = require('electron');
+const FileBin          = require('file-bin');
 
 const app              = electron.app;
 const BrowserWindow    = electron.BrowserWindow;
 const emberAppLocation = `file://${__dirname}/dist/index.html`;
 
 let mainWindow = null;
+let filesystem = new FileBin(__dirname + '/notes', ['.txt', '.md', '.markdown']);
 
 electron.crashReporter.start();
 
@@ -35,3 +37,5 @@ app.on('ready', function onReady() {
     mainWindow = null;
   });
 });
+
+exports.filesystem = filesystem;
