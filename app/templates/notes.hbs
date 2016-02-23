@@ -1,9 +1,13 @@
 <div class="note-list">
-{{#each model as |note|}}
-  {{#link-to 'notes.note' note class="note-list-item"}}
-    {{note.id}}
-  {{/link-to}}
-{{/each}}
+  <div class='new-note'>
+    {{input type="text" placeholder='New Note Title' value=newNoteTitle}}
+    {{#if newNoteTitle}}<button{{action 'createNote'}}>Create</button>{{/if}}
+  </div>
+  {{#each model as |note|}}
+    {{#link-to 'notes.note' note class="note-list-item"}}
+      {{note.id}}
+    {{/link-to}}
+  {{/each}}
 </div>
 
 {{outlet}}
