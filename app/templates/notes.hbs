@@ -1,14 +1,32 @@
-<div class="note-list">
-  <div class='new-note'>
-    {{input type="text" placeholder='New Note Title' value=newNoteTitle}}
-    {{input type="text" placeholder='New Note Body' value=newNoteBody}}
-    {{#if newNoteTitle}}<button{{action 'createNote'}}>Create</button>{{/if}}
-  </div>
-  {{#each model as |note|}}
-    {{#link-to 'notes.note' note class="note-list-item"}}
-      {{note.id}}
-    {{/link-to}}
-  {{/each}}
-</div>
+<div class="window">
+  <div class="window-content">
+    <div class="pane-group">
+      <div class="pane-sm sidebar">
+        <ul class="list-group">
 
-{{outlet}}
+          <li class="new note list-group-header">
+            {{input type="text" placeholder='New Note Title' value=newNoteTitle}}
+            <br>
+            <!--{{input type="text" placeholder='New Note Body' value=newNoteBody}}-->
+            {{#if newNoteTitle}}<button{{action 'createNote'}}>Create</button>{{/if}}
+            <!--<input class="form-control" type="text" placeholder="Search for someone">-->
+          </li>
+
+          {{#each model as |note|}}
+          <li class="list-group-item">
+            {{#link-to 'notes.note' note class="note-list-item"}}
+              {{note.id}}
+            {{/link-to}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="pane">
+        {{outlet}}
+      </div>
+
+    </div>
+
+  </div>
+</div>
