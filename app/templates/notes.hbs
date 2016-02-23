@@ -7,9 +7,8 @@
           <li class="new note list-group-header">
             {{input type="text" placeholder='New Note Title' value=newNoteTitle}}
             <br>
-            <!--{{input type="text" placeholder='New Note Body' value=newNoteBody}}-->
+            {{input type="text" placeholder='New Note Body' value=newNoteBody}}
             {{#if newNoteTitle}}<button{{action 'createNote'}}>Create</button>{{/if}}
-            <!--<input class="form-control" type="text" placeholder="Search for someone">-->
           </li>
 
           {{#each model as |note|}}
