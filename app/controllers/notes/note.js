@@ -4,7 +4,9 @@ export default Ember.Controller.extend({
   actions: {
     saveNote(){
       this.get('model').save();
-      console.log("saved");
+    },
+    removeNote(){
+      this.get('model').destroyRecord();
     }
   }
 })

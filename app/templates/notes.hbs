@@ -1,6 +1,7 @@
 <div class="note-list">
   <div class='new-note'>
     {{input type="text" placeholder='New Note Title' value=newNoteTitle}}
+    {{input type="text" placeholder='New Note Body' value=newNoteBody}}
     {{#if newNoteTitle}}<button{{action 'createNote'}}>Create</button>{{/if}}
   </div>
   {{#each model as |note|}}
