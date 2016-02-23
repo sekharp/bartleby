@@ -19,6 +19,6 @@ export default DS.Adapter.extend({
   },
   deleteRecord(store, type, snapshot){
     let data = this.serialize(snapshot, {includeId: true})
-    debugger
+    // waiting for FileBin implementation.
   }
 });
