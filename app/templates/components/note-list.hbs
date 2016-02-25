@@ -1,0 +1,5 @@
+{{input type="text" value=searchTerm placeholder="Search Notes..."}}
+
+{{#each availableNotes as |note|}}
+  {{note-list-item note=note}}
+{{/each}}
