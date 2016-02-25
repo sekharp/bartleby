@@ -6,7 +6,9 @@ export default Ember.Controller.extend({
       this.get('model').save();
     },
     removeNote(){
-      this.get('model').deleteRecord();
+      this.get('model').destroyRecord().then(() => {
+        this.transitionToRoute('notes');
+      }).catch(error => alert(error.message));
     }
   }
 })

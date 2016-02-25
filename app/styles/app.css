@@ -13,3 +13,7 @@ body, input {
 .note-list-item {
   display: block;
 }
+
+.paddington {
+  padding-left: 20px;
+}

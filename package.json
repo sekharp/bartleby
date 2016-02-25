@@ -41,7 +41,7 @@
     "ember-electron": "0.5.8",
     "ember-export-application-global": "^1.0.4",
     "ember-inspector": "1.9.5",
-    "file-bin": "0.2.0"
+    "file-bin": "0.5.1"
   },
   "main": "electron.js",
   "ember-electron": {

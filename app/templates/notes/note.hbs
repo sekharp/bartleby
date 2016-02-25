@@ -1,10 +1,11 @@
-<div class="note-content">
+<div class="paddington note-content">
   <h3>{{model.id}}</h3>
+  <button {{action 'removeNote' on='click'}} class="btn btn-negative">Delete</button>
   <p>{{model.content}}</p>
   {{textarea value=model.content}}
   <br/>
   {{#if model.hasDirtyAttributes}}<button{{action 'saveNote' on="click"}} class="btn btn-default" >Save</button>{{/if}}
-  <button {{action 'removeNote' on='click'}} class="btn btn-negative">Delete</button>
+
 
   <h4>Markdown Preview</h4>
   {{markdown-to-html markdown=model.content}}
