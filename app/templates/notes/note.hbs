@@ -4,7 +4,7 @@
   {{textarea value=model.content}}
   <br/>
   {{#if model.hasDirtyAttributes}}<button{{action 'saveNote' on="click"}} class="btn btn-default" >Save</button>{{/if}}
-  <button {{action 'removeNote' on='click'}} class="btn btn-negative">delete</button>
+  <button {{action 'removeNote' on='click'}} class="btn btn-negative">Delete</button>
 
   <h4>Markdown Preview</h4>
   {{markdown-to-html markdown=model.content}}
