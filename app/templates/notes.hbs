@@ -10,16 +10,11 @@
             {{input type="text" placeholder='New Note Body' value=newNoteBody}}
             {{#if newNoteTitle}}<button{{action 'createNote'}}>Create</button>{{/if}}
           </li>
-
-          {{#each model as |note|}}
-          <li class="list-group-item">
-            {{#link-to 'notes.note' note class="note-list-item"}}
-              {{note.id}}
-            {{/link-to}}
-          </li>
-          {{/each}}
         </ul>
+      <div class="note-list">
+        {{note-list notes=model}}
       </div>
+    </div>
 
       <div class="pane">
         {{outlet}}
