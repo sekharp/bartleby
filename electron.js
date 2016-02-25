@@ -3,13 +3,17 @@
 
 const electron         = require('electron');
 const FileBin          = require('file-bin');
-
 const app              = electron.app;
 const BrowserWindow    = electron.BrowserWindow;
 const emberAppLocation = `file://${__dirname}/dist/index.html`;
+const Menu             = electron.Menu;
+const Tray             = electron.Tray;
 
 let mainWindow = null;
+
 let filesystem = new FileBin(__dirname + '/notes', ['.txt', '.md', '.markdown']);
+
+let appIcon = null;
 
 electron.crashReporter.start();
 
@@ -20,10 +24,25 @@ app.on('window-all-closed', function onWindowAllClosed() {
 });
 
 app.on('ready', function onReady() {
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
   });
+
+  appIcon = new Tray('./app/assets/b-logo.png');
+
+  var contextMenu = Menu.buildFromTemplate([
+    { label: 'Quit', type: 'radio' },
+    { label: 'Item3', type: 'radio', checked: true },
+    { label: 'Item4', type: 'radio' }
+  ]);
+
+  //appIcon.on('click', function(){
+  //})
+
+  appIcon.setToolTip('This is my application.');
+  appIcon.setContextMenu(contextMenu);
 
   delete mainWindow.module;
 
@@ -36,6 +55,8 @@ app.on('ready', function onReady() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+
 });
 
 exports.filesystem = filesystem;
