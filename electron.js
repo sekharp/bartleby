@@ -33,9 +33,12 @@ app.on('ready', function onReady() {
   appIcon = new Tray('./app/assets/b-logo.png');
 
   var contextMenu = Menu.buildFromTemplate([
-    { label: 'Quit', type: 'radio' },
-    { label: 'Item3', type: 'radio', checked: true },
-    { label: 'Item4', type: 'radio' }
+    {
+            label: 'Quit',
+            type: 'radio',
+            accelerator: 'Command+Q',
+            click: function() { app.quit(); }
+    },
   ]);
 
   //appIcon.on('click', function(){
