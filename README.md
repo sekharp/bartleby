@@ -1,9 +1,9 @@
 # Bartleby, Group Project
 
 [Turing School Module 4 JavaScript Ember.js and Electron Project](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/bartleby_project.markdown)
-* Built a note-taking desktop application with basic CRUD functionality in JavaScript.
-* I focused on building the CRUD functionality and styling with the Photon framework.
-* Tech stack included Electron (formerly Atom Shell), Ember.js, Node.js, Bower, PhantomJS and Photon (styling for Electron).
+* We built a note-taking desktop application with basic CRUD functionality in JavaScript.
+* I focused on building the CRUD functionality and styling with the Photon framework.<br><br>
+**Tech stack: Electron (formerly Atom Shell), Ember.js, Node.js, Bower, PhantomJS and Photon (styling for Electron)**
 
 ![Bartleby Screenshot](/public/screenshot.png)
 
